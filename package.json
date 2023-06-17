@@ -1,0 +1,10 @@
+{
+  "name": "storyblok-schema",
+  "version": "0.0.6",
+  "main": "",
+  "types": "./src/index.d.ts",
+  "description": "TypeScript definitions for defining Storyblok Components and infer their Props",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
