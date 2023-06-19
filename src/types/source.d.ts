@@ -16,7 +16,7 @@ export type ExternalSource = {
 };
 
 export type SelfSource = {
-  options: Array<{ name: string; value: string; _uid?: string }>;
+  options: ReadonlyArray<{ name: string; value: string; _uid?: string }>;
 };
 
 export type InternalStoriesSource = {

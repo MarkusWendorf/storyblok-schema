@@ -1,4 +1,5 @@
 import { Field } from '../field';
+import { SelfSource } from '../source';
 
 /** Values based on the fields defined by the component schema */
 export type FieldValue<T extends Field> = {
@@ -9,8 +10,8 @@ export type FieldValue<T extends Field> = {
   number: number;
   datetime: string;
   boolean: boolean;
-  options: string[];
-  option: string;
+  options: Array<InferOptionValue<T>>;
+  option: InferOptionValue<T>;
   asset: Asset;
   multiasset: Asset[];
   multilink: Link;
@@ -24,6 +25,10 @@ export type FieldValue<T extends Field> = {
    */
   bloks: never;
 }[T['type']];
+
+type InferOptionValue<T extends Field> = T extends SelfSource
+  ? T['options'][number]['value']
+  : string;
 
 export interface Asset {
   fieldtype: 'asset';
