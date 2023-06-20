@@ -33,9 +33,11 @@ type InferOptionValue<T extends Field> = T extends SelfSource
   ? T['options'][number]['value']
   : string;
 
-type Required<T extends Field, Value> = T['required'] extends true
+type Required<T extends Field, Value> = [Value] extends [never]
+  ? never
+  : T['required'] extends true
   ? Value
-  : Value | null | undefined;
+  : Value | undefined;
 
 export interface Asset {
   fieldtype: 'asset';
