@@ -1,4 +1,5 @@
 import { Field } from '../field';
+import { ISbRichtext } from '../richtext';
 import { SelfSource } from '../source';
 
 /** Values based on the fields defined by the component schema */
@@ -8,7 +9,7 @@ export type FieldValue<T extends Field> = Required<
     text: string;
     textarea: string;
     markdown: string;
-    richtext: unknown;
+    richtext: ISbRichtext;
     number: number;
     datetime: string;
     boolean: boolean;
