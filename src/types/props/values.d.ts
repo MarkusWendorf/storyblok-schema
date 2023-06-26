@@ -13,7 +13,9 @@ export type FieldValue<T extends Field> = Required<
     number: number;
     datetime: string;
     boolean: boolean;
-    options: Array<InferOptionValue<T>>;
+    options: IsNever<InferOptionValue<T>> extends true
+      ? never
+      : Array<InferOptionValue<T>>;
     option: InferOptionValue<T>;
     asset: Asset;
     multiasset: Asset[];
@@ -30,11 +32,13 @@ export type FieldValue<T extends Field> = Required<
   }[T['type']]
 >;
 
+type IsNever<T> = [T] extends [never] ? true : false;
+
 type InferOptionValue<T extends Field> = T extends SelfSource
   ? T['options'][number]['value']
-  : string;
+  : never; // Only SelfSource can be inferred, other sources have to be defined by the user
 
-type Required<T extends Field, Value> = [Value] extends [never]
+type Required<T extends Field, Value> = IsNever<Value> extends true
   ? never
   : T['required'] extends true
   ? Value
