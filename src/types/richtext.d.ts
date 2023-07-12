@@ -19,6 +19,17 @@ export type ToolbarOption =
   | 'link'
   | 'image'
   | 'paste'
+  | 'color'
+  | 'superscript'
+  | 'subscript'
+  | 'paste-action'
+  | 'paste'
+  | 'undo'
+  | 'redo'
+  | 'highlight'
+  | 'copy'
+  | 'cut'
+  | 'emoji'
   | 'bold';
 
 /** Taken from storyblok SDK */
