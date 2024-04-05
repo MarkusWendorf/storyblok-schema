@@ -1,6 +1,6 @@
-import { FileType } from './filetype';
-import { ToolbarOption } from './richtext';
-import { Source } from './source';
+import { FileType } from "./filetype";
+import { ToolbarOption } from "./richtext";
+import { Source } from "./source";
 
 export type Field =
   | BloksField
@@ -35,7 +35,7 @@ interface BaseField {
 }
 
 export type BloksField = BaseField & {
-  type: 'bloks';
+  type: "bloks";
   minimum?: number;
   maximum?: number;
   restrict_type?: string | null;
@@ -44,7 +44,7 @@ export type BloksField = BaseField & {
 };
 
 export type TextField = BaseField & {
-  type: 'text';
+  type: "text";
   default_value?: string | null;
   rtl?: boolean;
   max_length?: number | null;
@@ -53,7 +53,7 @@ export type TextField = BaseField & {
 };
 
 export type TextAreaField = BaseField & {
-  type: 'textarea';
+  type: "textarea";
   default_value?: string | null;
   rtl?: boolean;
   max_length?: string | null;
@@ -62,7 +62,7 @@ export type TextAreaField = BaseField & {
 };
 
 export type MarkdownField = BaseField & {
-  type: 'markdown';
+  type: "markdown";
   default_value?: string | null;
   rtl?: boolean | null;
   rich_markdown?: boolean | null;
@@ -70,7 +70,7 @@ export type MarkdownField = BaseField & {
 };
 
 export type RichtextField = BaseField & {
-  type: 'richtext';
+  type: "richtext";
   default_value?: string | null;
   customize_toolbar?: boolean | null;
   toolbar?: ToolbarOption[];
@@ -80,7 +80,7 @@ export type RichtextField = BaseField & {
 };
 
 export type NumberField = BaseField & {
-  type: 'number';
+  type: "number";
   default_value?: number | null;
   min_value?: number | null;
   max_value?: number | null;
@@ -88,18 +88,18 @@ export type NumberField = BaseField & {
 };
 
 export type DateTimeField = BaseField & {
-  type: 'datetime';
+  type: "datetime";
   /** Disables time selection from date picker */
   disable_time?: boolean | null;
 };
 
 export type BooleanField = BaseField & {
-  type: 'boolean';
+  type: "boolean";
   default_value?: boolean | null;
 };
 
 export type OptionsField = BaseField & {
-  type: 'options';
+  type: "options";
   min_options?: string | null;
   max_options?: string | null;
   max_length?: string | null;
@@ -108,7 +108,7 @@ export type OptionsField = BaseField & {
 } & Source;
 
 export type OptionField = BaseField & {
-  type: 'option';
+  type: "option";
   default_value?: string | null;
   exclude_empty_option?: boolean | null;
   filter_content_type?: string | null | string[];
@@ -116,19 +116,19 @@ export type OptionField = BaseField & {
 } & Source;
 
 export type AssetField = BaseField & {
-  type: 'asset';
+  type: "asset";
   filetypes?: FileType[];
   asset_folder_id?: number;
 };
 
 export type MultiAssetField = BaseField & {
-  type: 'multiasset';
+  type: "multiasset";
   filetypes?: FileType[];
   asset_folder_id?: number;
 };
 
 export type LinkField = BaseField & {
-  type: 'multilink';
+  type: "multilink";
   restrict_components?: boolean | null;
   allow_custom_attributes?: boolean | null;
   allow_target_blank?: boolean | null;
@@ -141,11 +141,11 @@ export type LinkField = BaseField & {
 };
 
 export type TableField = BaseField & {
-  type: 'table';
+  type: "table";
 };
 
 export type CustomField = BaseField & {
-  type: 'custom';
+  type: "custom";
   /** Name of the custom field export type plugin */
   field_type: string;
   /** Comma separated */
@@ -154,13 +154,13 @@ export type CustomField = BaseField & {
 };
 
 export type TabField = BaseField & {
-  type: 'tab';
+  type: "tab";
   /** Field names that belong to this tab */
   keys: string[];
 };
 
 export type GroupField = BaseField & {
-  type: 'section';
+  type: "section";
   /** Field names that belong to this section */
   keys: string[];
 };

@@ -1,9 +1,13 @@
 {
   "name": "storyblok-schema",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "",
   "types": "./src/index.d.ts",
   "description": "TypeScript definitions for defining Storyblok Components and infer their Props",
+  "scripts": {
+    "publish-dry-run": "npm publish --dry-run",
+    "publish-npm": "npm publish"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
