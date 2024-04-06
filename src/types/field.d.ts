@@ -40,7 +40,7 @@ export type BloksField = BaseField & {
   maximum?: number;
   restrict_type?: string | null;
   restrict_components?: boolean;
-  component_whitelist?: string[];
+  component_whitelist?: ReadonlyArray<string>;
 };
 
 export type TextField = BaseField & {
