@@ -1,6 +1,7 @@
-import { Field } from './src/types/field';
-import { FieldValue } from './src/types/props/values';
-export { Asset, Link, Table, TableRow } from './src/types/props/values';
+import { Field } from "./src/types/field";
+import { FieldValue } from "./src/types/props/values";
+export { Story } from "./src/types/story";
+export { Asset, Link, Table, TableRow } from "./src/types/props/values";
 
 export interface SchemaDefinition {
   components: Component[];
@@ -32,8 +33,8 @@ type Prettify<T> = {
   [K in keyof T as T[K] extends never ? never : K]: T[K];
 } & {};
 
-type Infer<T extends Component> = { component: T['name']; _uid: string } & {
-  [K in keyof T['schema']]: FieldValue<T['schema'][K]>;
+type Infer<T extends Component> = { component: T["name"]; _uid: string } & {
+  [K in keyof T["schema"]]: FieldValue<T["schema"][K]>;
 };
 
 export type InferProps<T extends Component> = Prettify<Infer<T>>;
