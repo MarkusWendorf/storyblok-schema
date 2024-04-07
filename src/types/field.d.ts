@@ -31,7 +31,7 @@ interface BaseField {
   /** Show description as a tooltip */
   tooltip?: boolean;
   translatable?: boolean;
-  component_group_whitelist?: string[];
+  component_group_whitelist?: ReadonlyArray<string>;
 }
 
 export type BloksField = BaseField & {
@@ -75,7 +75,7 @@ export type RichtextField = BaseField & {
   customize_toolbar?: boolean | null;
   toolbar?: ToolbarOption[];
   restrict_components?: boolean | null;
-  component_whitelist?: string[];
+  component_whitelist?: ReadonlyArray<string>;
   allow_target_blank?: boolean | null;
 };
 
@@ -103,7 +103,7 @@ export type OptionsField = BaseField & {
   min_options?: string | null;
   max_options?: string | null;
   max_length?: string | null;
-  filter_content_type?: string | null | string[];
+  filter_content_type?: string | null | ReadonlyArray<string>;
   use_uuid?: boolean | null;
 } & Source;
 
@@ -111,7 +111,7 @@ export type OptionField = BaseField & {
   type: "option";
   default_value?: string | null;
   exclude_empty_option?: boolean | null;
-  filter_content_type?: string | null | string[];
+  filter_content_type?: string | null | ReadonlyArray<string>;
   use_uuid?: boolean | null;
 } & Source;
 
@@ -133,7 +133,7 @@ export type LinkField = BaseField & {
   allow_custom_attributes?: boolean | null;
   allow_target_blank?: boolean | null;
   asset_link_type?: boolean | null;
-  component_whitelist?: string[];
+  component_whitelist?: ReadonlyArray<string>;
   email_link_type?: boolean | null;
   restrict_content_types?: boolean | null;
   show_anchor?: boolean | null;
@@ -156,11 +156,11 @@ export type CustomField = BaseField & {
 export type TabField = BaseField & {
   type: "tab";
   /** Field names that belong to this tab */
-  keys: string[];
+  keys: ReadonlyArray<string>;
 };
 
 export type GroupField = BaseField & {
   type: "section";
   /** Field names that belong to this section */
-  keys: string[];
+  keys: ReadonlyArray<string>;
 };
