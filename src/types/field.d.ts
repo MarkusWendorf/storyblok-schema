@@ -34,42 +34,42 @@ interface BaseField {
   component_group_whitelist?: ReadonlyArray<string>;
 }
 
-export type BloksField = BaseField & {
+export interface BloksField extends BaseField {
   type: "bloks";
   minimum?: number;
   maximum?: number;
   restrict_type?: string | null;
   restrict_components?: boolean;
   component_whitelist?: ReadonlyArray<string>;
-};
+}
 
-export type TextField = BaseField & {
+export interface TextField extends BaseField {
   type: "text";
   default_value?: string | null;
   rtl?: boolean;
   max_length?: number | null;
   /** Client Regex validation for the field */
   regex?: string | null;
-};
+}
 
-export type TextAreaField = BaseField & {
+export interface TextAreaField extends BaseField {
   type: "textarea";
   default_value?: string | null;
   rtl?: boolean;
   max_length?: string | null;
   /** Client Regex validation for the field */
   regex?: string | null;
-};
+}
 
-export type MarkdownField = BaseField & {
+export interface MarkdownField extends BaseField {
   type: "markdown";
   default_value?: string | null;
   rtl?: boolean | null;
   rich_markdown?: boolean | null;
   max_length?: string | null;
-};
+}
 
-export type RichtextField = BaseField & {
+export interface RichtextField extends BaseField {
   type: "richtext";
   default_value?: string | null;
   customize_toolbar?: boolean | null;
@@ -77,26 +77,26 @@ export type RichtextField = BaseField & {
   restrict_components?: boolean | null;
   component_whitelist?: ReadonlyArray<string>;
   allow_target_blank?: boolean | null;
-};
+}
 
-export type NumberField = BaseField & {
+export interface NumberField extends BaseField {
   type: "number";
   default_value?: number | null;
   min_value?: number | null;
   max_value?: number | null;
   decimals?: number | null;
-};
+}
 
-export type DateTimeField = BaseField & {
+export interface DateTimeField extends BaseField {
   type: "datetime";
   /** Disables time selection from date picker */
   disable_time?: boolean | null;
-};
+}
 
-export type BooleanField = BaseField & {
+export interface BooleanField extends BaseField {
   type: "boolean";
   default_value?: boolean | null;
-};
+}
 
 export type OptionsField = BaseField & {
   type: "options";
@@ -115,19 +115,19 @@ export type OptionField = BaseField & {
   use_uuid?: boolean | null;
 } & Source;
 
-export type AssetField = BaseField & {
+export interface AssetField extends BaseField {
   type: "asset";
   filetypes?: FileType[];
   asset_folder_id?: number;
-};
+}
 
-export type MultiAssetField = BaseField & {
+export interface MultiAssetField extends BaseField {
   type: "multiasset";
   filetypes?: FileType[];
   asset_folder_id?: number;
-};
+}
 
-export type LinkField = BaseField & {
+export interface LinkField extends BaseField {
   type: "multilink";
   restrict_components?: boolean | null;
   allow_custom_attributes?: boolean | null;
@@ -138,29 +138,29 @@ export type LinkField = BaseField & {
   restrict_content_types?: boolean | null;
   show_anchor?: boolean | null;
   link_scope?: string | null;
-};
+}
 
-export type TableField = BaseField & {
+export interface TableField extends BaseField {
   type: "table";
-};
+}
 
-export type CustomField = BaseField & {
+export interface CustomField extends BaseField {
   type: "custom";
   /** Name of the custom field export type plugin */
   field_type: string;
   /** Comma separated */
   required_fields?: string | null;
   options?: Array<{ name: string; value: string }> | null;
-};
+}
 
-export type TabField = BaseField & {
+export interface TabField extends BaseField {
   type: "tab";
   /** Field names that belong to this tab */
   keys: ReadonlyArray<string>;
-};
+}
 
-export type GroupField = BaseField & {
+export interface GroupField extends BaseField {
   type: "section";
   /** Field names that belong to this section */
   keys: ReadonlyArray<string>;
-};
+}

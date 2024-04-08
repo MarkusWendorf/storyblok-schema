@@ -1,6 +1,6 @@
 import { Field } from "./src/types/field";
 import { FieldValue } from "./src/types/props/values";
-export { Story } from "./src/types/story";
+export { Story, AnyBlok } from "./src/types/helper";
 export { Asset, Link, Table, TableRow } from "./src/types/props/values";
 
 export interface SchemaDefinition {

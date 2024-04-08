@@ -1,6 +1,6 @@
 {
   "name": "storyblok-schema",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "main": "",
   "types": "./src/index.d.ts",
   "description": "TypeScript definitions for defining Storyblok Components and infer their Props",

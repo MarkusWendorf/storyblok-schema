@@ -1,5 +1,5 @@
 /** This is an incomplete list of properties */
-export type Story<T> = {
+export interface Story<T> {
   name: string;
   created_at: string;
   published_at?: string;
@@ -11,4 +11,9 @@ export type Story<T> = {
   tag_list: string[];
   is_startpage: boolean;
   parent_id: number;
-};
+}
+
+export interface AnyBlok {
+  component: string;
+  _uid: string;
+}
