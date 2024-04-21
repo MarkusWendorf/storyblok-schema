@@ -10,7 +10,7 @@ export interface Story<T> {
   tag_list: string[];
   parent_id: number;
   is_startpage?: boolean;
-  published_at?: string;
+  published_at?: string | null;
 }
 
 export interface AnyBlok {
