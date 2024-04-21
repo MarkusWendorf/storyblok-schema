@@ -41,8 +41,8 @@ type Required<T extends Field, Value> = IsNever<Value> extends true
   : Value | undefined;
 
 export interface Asset {
-  fieldtype: "asset";
   id: number;
+  fieldtype?: string;
   alt?: string;
   name?: string;
   title?: string;
