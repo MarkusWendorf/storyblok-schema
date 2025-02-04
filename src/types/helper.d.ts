@@ -8,7 +8,7 @@ export interface Story<T> {
   slug: string;
   full_slug: string;
   tag_list: string[];
-  parent_id: number;
+  parent_id: number | null;
   is_startpage?: boolean;
   published_at?: string | null;
 }
