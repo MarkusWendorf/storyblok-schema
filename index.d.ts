@@ -26,6 +26,8 @@ export interface Component {
   all_presets?: unknown[];
   component_group_uuid?: string | null;
   component_group_name?: string | null;
+  internal_tags_list?: Array<{ id: string; name: string }>;
+  internal_tag_ids?: string[];
 }
 
 /** Prettify type and remove all values of type never */
