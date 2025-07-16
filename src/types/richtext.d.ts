@@ -30,7 +30,9 @@ export type ToolbarOption =
   | "copy"
   | "cut"
   | "emoji"
-  | "bold";
+  | "bold"
+  | "anchor"
+  | (string & {});
 
 /** Taken from storyblok SDK */
 export interface ISbRichtext {
